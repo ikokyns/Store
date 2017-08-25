@@ -1,3 +1,47 @@
-<p>
-  buyers works!
-</p>
+<h1>Buyers</h1>
+
+<div>
+	<table class="table table-striped">
+	  <thead>
+	    <tr>
+	      <th>ID</th>
+	      <th>First name</th>
+	      <th>Last name</th>
+	      <th>Email</th>
+	      <th>Remove bayer</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr *ngFor="let buyer of buyers">
+	      <td class="align-middle"> {{ buyer.id }} </td>	    
+	      <td class="align-middle"> {{ buyer.firstName }} </td>
+	      <td class="align-middle"> {{ buyer.lastName }} </td>
+	      <td class="align-middle"> {{ buyer.email }}</td>
+	      <td><button class="btn btn-danger btn-sm" (click)="remove(buyer)">Remove</button></td>
+	    </tr>
+	</table>
+</div>
+
+<div class="">
+	<div class="">
+		<label>Buyers ID:</label>
+		<input [(ngModel)]="bayers.id" class="form-control-static" type="text" name="id"/>
+	</div>
+	<div class="">
+		<label>First name:</label>
+		<input [(ngModel)]="bayers.firstName" class="form-control-static" type="text" name="firstName"/>
+	</div>
+	<div class="">
+		<label>Last name:</label>
+		<input [(ngModel)]="bayers.lastName" class="form-control-static" type="text" name="lastName"/>
+	</div>
+	<div class="">
+		<label>Email:</label>
+		<input [(ngModel)]="bayers.email" class="form-control-static" type="email" name="email"/>
+	</div>
+	<div class="">
+		<button type="button" class="btn btn-primary" (click)="addBuyer()">Add Buyer</button>
+	</div>
+</div>
+
+<router-outlet></router-outlet>
